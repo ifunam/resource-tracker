@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'factory_girl'
+
+unless Rails.env.production?
+  100.times do
+     FactoryGirl.create(:project)
+  end
+end
