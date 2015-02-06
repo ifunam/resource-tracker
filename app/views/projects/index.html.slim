@@ -27,3 +27,6 @@ table.table.table-striped
         td= project.budget_amount
         td= project.budget_spent_amount
         td=l project.created_at
+
+.well
+  = paginate @projects

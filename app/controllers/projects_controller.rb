@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.all
+    @projects = Project.all.page params[:page] || 1
   end
 
   # GET /projects/1

@@ -10,6 +10,7 @@ gem 'less-rails', '~> 2.6.0'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'jquery-rails', '~> 4.0.3'
 gem 'turbolinks', '~> 2.5.3'
+gem 'kaminari', '~> 0.16.2'
 
 group :development, :test do
   gem 'ffaker', '~> 1.32.1'
