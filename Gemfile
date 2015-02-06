@@ -5,6 +5,11 @@ gem 'rails', '~> 4.2.0'
 gem 'mongoid', '~> 4.0.1'
 gem 'slim', '~> 3.0.2'
 gem 'puma', '~> 2.11.0'
+gem 'therubyracer', '~> 0.12.1'
+gem 'less-rails', '~> 2.6.0'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'jquery-rails', '~> 4.0.3'
+gem 'turbolinks', '~> 2.5.3'
 
 group :development, :test do
   gem 'ffaker', '~> 1.32.1'

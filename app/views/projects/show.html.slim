@@ -1,0 +1,42 @@
+- model_class = Project
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.titleize
+
+p
+  strong= model_class.human_attribute_name(:key) + ':'
+  br
+  = @project.key
+p
+  strong= model_class.human_attribute_name(:financing_source) + ':'
+  br
+  = @project.financing_source
+p
+  strong= model_class.human_attribute_name(:sponsor) + ':'
+  br
+  = @project.sponsor
+p
+  strong= model_class.human_attribute_name(:manager) + ':'
+  br
+  = @project.manager
+p
+  strong= model_class.human_attribute_name(:start_date) + ':'
+  br
+  = @project.start_date
+p
+  strong= model_class.human_attribute_name(:end_date) + ':'
+  br
+  = @project.end_date
+p
+  strong= model_class.human_attribute_name(:year) + ':'
+  br
+  = @project.year
+p
+  strong= model_class.human_attribute_name(:budget_amount) + ':'
+  br
+  = @project.budget_amount
+p
+  strong= model_class.human_attribute_name(:budget_spent_amount) + ':'
+  br
+  = @project.budget_spent_amount
+
+= link_to t('.back', :default => t("helpers.links.back")), projects_path, :class => 'btn btn-default'

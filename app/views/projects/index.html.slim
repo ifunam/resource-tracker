@@ -1,0 +1,29 @@
+- model_class = Project
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table.table.table-striped
+  thead
+    tr
+      th= model_class.human_attribute_name(:key)
+      th= model_class.human_attribute_name(:financing_source)
+      th= model_class.human_attribute_name(:sponsor)
+      th= model_class.human_attribute_name(:manager)
+      th= model_class.human_attribute_name(:start_date)
+      th= model_class.human_attribute_name(:end_date)
+      th= model_class.human_attribute_name(:year)
+      th= model_class.human_attribute_name(:budget_amount)
+      th= model_class.human_attribute_name(:budget_spent_amount)
+      th= model_class.human_attribute_name(:created_at)
+  tbody
+    - @projects.each do |project|
+      tr
+        td= link_to project.key, project_path(project)
+        td= project.financing_source
+        td= project.sponsor
+        td= project.manager
+        td= project.start_date
+        td= project.end_date
+        td= project.year
+        td= project.budget_amount
+        td= project.budget_spent_amount
+        td=l project.created_at
