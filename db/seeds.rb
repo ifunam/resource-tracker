@@ -9,6 +9,10 @@ require 'factory_girl'
 
 unless Rails.env.production?
   100.times do
-     FactoryGirl.create(:project)
+    p = FactoryGirl.build(:project)
+    Random.rand(1..20).times do
+      p.expenses << FactoryGirl.build(:expense)
+    end
+    p.save
   end
 end

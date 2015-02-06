@@ -11,4 +11,6 @@ class Project
   field :year, type: Integer
   field :budget_amount, type: Float
   field :budget_spent_amount, type: Float
+
+  embeds_many :expenses
 end

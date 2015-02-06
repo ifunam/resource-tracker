@@ -39,4 +39,7 @@ p
   br
   = @project.budget_spent_amount
 
+- @expenses = @project.expenses
+= render :partial => 'expenses/table'
+
 = link_to t('.back', :default => t("helpers.links.back")), projects_path, :class => 'btn btn-default'
