@@ -4,13 +4,16 @@ class Project
 
   field :key, type: String
   field :financing_source, type: String
+  field :name, type: String
+  field :agreement, type: String
   field :sponsor, type: String
-  field :manager, type: String
   field :start_date, type: Date
   field :end_date, type: Date
-  field :year, type: Integer
-  field :budget_amount, type: Float
-  field :budget_spent_amount, type: Float
+  field :inprogress, type: Boolean
+  field :authorized_budget, type: Float
+  field :deposited_budget, type: Float
+  field :committed_budget, type: Float
+  field :spent_budget, type: Float
 
-  embeds_many :expenses
+  embeds_many :lines
 end

@@ -6,27 +6,27 @@ table.table.table-striped
     tr
       th= model_class.human_attribute_name(:key)
       th= model_class.human_attribute_name(:financing_source)
+      th= model_class.human_attribute_name(:name)
       th= model_class.human_attribute_name(:sponsor)
-      th= model_class.human_attribute_name(:manager)
       th= model_class.human_attribute_name(:start_date)
       th= model_class.human_attribute_name(:end_date)
-      th= model_class.human_attribute_name(:year)
-      th= model_class.human_attribute_name(:budget_amount)
-      th= model_class.human_attribute_name(:budget_spent_amount)
-      th= model_class.human_attribute_name(:created_at)
+      th= model_class.human_attribute_name(:authorized_budget)
+      th= model_class.human_attribute_name(:deposited_budget)
+      th= model_class.human_attribute_name(:committed_budget)
+      th= model_class.human_attribute_name(:spent_budget)
   tbody
     - @projects.each do |project|
       tr
         td= link_to project.key, project_path(project)
         td= project.financing_source
+        td= project.name
         td= project.sponsor
-        td= project.manager
         td= project.start_date
         td= project.end_date
-        td= project.year
-        td= project.budget_amount
-        td= project.budget_spent_amount
-        td=l project.created_at
+        td= project.authorized_budget
+        td= project.deposited_budget
+        td= project.committed_budget
+        td= project.spent_budget
 
 .well
   = paginate @projects

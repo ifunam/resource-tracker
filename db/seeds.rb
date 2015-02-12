@@ -3,15 +3,17 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'factory_girl'
 
 unless Rails.env.production?
   100.times do
     p = FactoryGirl.build(:project)
-    Random.rand(1..20).times do
-      p.expenses << FactoryGirl.build(:expense)
+    Random.rand(1..10).times do
+      l = FactoryGirl.build(:line)
+      Random.rand(1..10).times do
+        l.expenditures << FactoryGirl.build(:expenditure)
+      end
+      p.lines << l
     end
     p.save
   end

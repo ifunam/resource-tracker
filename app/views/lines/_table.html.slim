@@ -1,0 +1,13 @@
+- model_class = Line
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table.table.table-striped
+  thead
+    tr
+      th= model_class.human_attribute_name(:key)
+      th= model_class.human_attribute_name(:name)
+      th= model_class.human_attribute_name(:deposited_budget)
+      th= model_class.human_attribute_name(:committed_budget)
+      th= model_class.human_attribute_name(:spent_budget)
+  tbody
+    = render partial: 'lines/line', collection: @lines

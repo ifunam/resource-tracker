@@ -11,13 +11,13 @@ p
   br
   = @project.financing_source
 p
+  strong= model_class.human_attribute_name(:name) + ':'
+  br
+  = @project.name
+p
   strong= model_class.human_attribute_name(:sponsor) + ':'
   br
   = @project.sponsor
-p
-  strong= model_class.human_attribute_name(:manager) + ':'
-  br
-  = @project.manager
 p
   strong= model_class.human_attribute_name(:start_date) + ':'
   br
@@ -27,19 +27,23 @@ p
   br
   = @project.end_date
 p
-  strong= model_class.human_attribute_name(:year) + ':'
+  strong= model_class.human_attribute_name(:authorized_budget) + ':'
   br
-  = @project.year
+  = @project.authorized_budget
 p
-  strong= model_class.human_attribute_name(:budget_amount) + ':'
+  strong= model_class.human_attribute_name(:deposited_budget) + ':'
   br
-  = @project.budget_amount
+  = @project.deposited_budget
 p
-  strong= model_class.human_attribute_name(:budget_spent_amount) + ':'
+  strong= model_class.human_attribute_name(:committed_budget) + ':'
   br
-  = @project.budget_spent_amount
+  = @project.committed_budget
+p
+  strong= model_class.human_attribute_name(:spent_budget) + ':'
+  br
+  = @project.spent_budget
 
-- @expenses = @project.expenses
-= render :partial => 'expenses/table'
+- @lines = @project.lines
+= render :partial => 'lines/table'
 
 = link_to t('.back', :default => t("helpers.links.back")), projects_path, :class => 'btn btn-default'
