@@ -11,6 +11,9 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'jquery-rails', '~> 4.0.3'
 gem 'turbolinks', '~> 2.5.3'
 gem 'kaminari', '~> 0.16.2'
+gem 'tzinfo', '~> 1.2.2'
+gem 'rails-i18n', '~> 4.0.3'
+gem 'mongoid_i18n', '~> 0.5.1'
 
 group :development, :test do
   gem 'ffaker', '~> 1.32.1'
