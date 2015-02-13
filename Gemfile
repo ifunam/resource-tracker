@@ -15,6 +15,7 @@ gem 'tzinfo', '~> 1.2.2'
 gem 'rails-i18n', '~> 4.0.3'
 gem 'mongoid_i18n', '~> 0.5.1'
 gem 'mongoid_slug', '~> 4.0.0'
+gem 'active_model_serializers', '~> 0.9.3'
 
 group :development, :test do
   gem 'ffaker', '~> 1.32.1'
