@@ -1,4 +1,3 @@
-require 'pry'
 class ExpendituresController < ApplicationController
   before_filter :determine_scope
 
