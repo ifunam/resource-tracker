@@ -4,7 +4,7 @@
 table.table.table-striped
   thead
     tr
-      th= model_class.human_attribute_name(:key)
+      th=t model_class.human_attribute_name(:key)
       th= model_class.human_attribute_name(:financing_source)
       th= model_class.human_attribute_name(:name)
       th= model_class.human_attribute_name(:sponsor)
@@ -23,10 +23,10 @@ table.table.table-striped
         td= project.sponsor
         td= project.start_date
         td= project.end_date
-        td= project.authorized_budget
-        td= project.deposited_budget
-        td= project.committed_budget
-        td= project.spent_budget
+        td= number_with_precision project.authorized_budget
+        td= number_with_precision project.deposited_budget
+        td= number_with_precision project.committed_budget
+        td= number_with_precision project.spent_budget
 
 .well
   = paginate @projects

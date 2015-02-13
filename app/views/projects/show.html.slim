@@ -29,19 +29,19 @@ p
 p
   strong= model_class.human_attribute_name(:authorized_budget) + ':'
   br
-  = @project.authorized_budget
+  = number_with_precision @project.authorized_budget
 p
   strong= model_class.human_attribute_name(:deposited_budget) + ':'
   br
-  = @project.deposited_budget
+  = number_with_precision @project.deposited_budget
 p
   strong= model_class.human_attribute_name(:committed_budget) + ':'
   br
-  = @project.committed_budget
+  = number_with_precision @project.committed_budget
 p
   strong= model_class.human_attribute_name(:spent_budget) + ':'
   br
-  = @project.spent_budget
+  = number_with_precision @project.spent_budget
 
 - @lines = @project.lines
 = render :partial => 'lines/table'
