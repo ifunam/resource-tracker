@@ -20,7 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es-MX:
-  activerecord:
+  mongoid:
+
     models:
       project:
         one: Proyecto
@@ -32,33 +33,33 @@ es-MX:
         one: Gasto
         other: Gastos
 
-      attributes:
-        project:
-          key: Clave
-          financing_source: Fuente de financiamiento
-          name: Nombre
-          agreement: Convenio
-          sponsor: Patrocinador
-          start_date: Fecha de inicio
-          end_date: Fecha de término
-          inprogress: Vigente o en proceso
-          authorized_budget: Presupuesto autorizado
-          deposited_budget: Presupuesto depositado
-          committed_budget: Presupuesto comprometido
-          spent_budget: Presupuesto ejercido
-          lines: Partidas
-        line:
-          key: Grupo
-          name: Nombre
-          deposited_budget: Presupuesto depositado
-          committed_budget: Presupuesto comprometido
-          spent_budget: Presupuesto ejercido
-          project: Proyecto
-          expenditures: Gastos
-        expenditure:
-          key: Identificador
-          date: Fecha de trámite
-          motive: Motivo(s)
-          amount: Importe
-          condition: Situación
-          line: Partida
+    attributes:
+      project:
+        key: Clave
+        financing_source: Fuente de financiamiento
+        name: Nombre
+        agreement: Convenio
+        sponsor: Patrocinador
+        start_date: Fecha de inicio
+        end_date: Fecha de término
+        inprogress: Vigente o en proceso
+        authorized_budget: Presupuesto autorizado
+        deposited_budget: Presupuesto depositado
+        committed_budget: Presupuesto comprometido
+        spent_budget: Presupuesto ejercido
+        lines: Partidas
+      line:
+        key: Grupo
+        name: Nombre
+        deposited_budget: Presupuesto depositado
+        committed_budget: Presupuesto comprometido
+        spent_budget: Presupuesto ejercido
+        project: Proyecto
+        expenditures: Gastos
+      expenditure:
+        key: Identificador
+        date: Fecha de trámite
+        motive: Motivo(s)
+        amount: Importe
+        condition: Situación
+        line: Partida
