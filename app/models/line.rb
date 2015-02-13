@@ -1,6 +1,7 @@
 class Line
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Slug
 
   field :key, type: Integer
   field :name, type: String
@@ -10,4 +11,6 @@ class Line
 
   embedded_in :project
   embeds_many :expenditures
+
+  slug :name, :scope => :project
 end
