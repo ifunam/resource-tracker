@@ -1,6 +1,7 @@
 class Project
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Slug
 
   field :key, type: String
   field :financing_source, type: String
@@ -16,4 +17,5 @@ class Project
   field :spent_budget, type: Float
 
   embeds_many :lines
+  slug :name
 end
