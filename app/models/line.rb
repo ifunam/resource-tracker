@@ -12,5 +12,5 @@ class Line
   embedded_in :project, inverse_of: :lines
   embeds_many :expenditures
 
-  slug :name, scope: :project
+  slug :key, scope: :project
 end
