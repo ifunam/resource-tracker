@@ -16,6 +16,6 @@ class Project
   field :committed_budget, type: Float
   field :spent_budget, type: Float
 
-  embeds_many :lines
+  embeds_many :lines, inverse_of: :project
   slug :name
 end

@@ -6,8 +6,9 @@
 require 'factory_girl'
 
 unless Rails.env.production?
-  100.times do
+  10.times do
     p = FactoryGirl.build(:project)
+    p.save
     Random.rand(1..10).times do
       l = FactoryGirl.build(:line)
       Random.rand(1..10).times do

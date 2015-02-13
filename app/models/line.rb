@@ -9,8 +9,8 @@ class Line
   field :committed_budget, type: Float
   field :spent_budget, type: Float
 
-  embedded_in :project
+  embedded_in :project, inverse_of: :lines
   embeds_many :expenditures
 
-  slug :name, :scope => :project
+  slug :name, scope: :project
 end
