@@ -27,4 +27,5 @@ rails/config/mongoid.yml
 ## Environment normalisation:
 rails/.bundle
 rails/vendor/bundle
+.DS_Store
 
