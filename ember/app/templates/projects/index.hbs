@@ -1,0 +1,18 @@
+<table class="table table-condensed table-hover table-striped table-bordered">
+  <tbody>
+  {{#each}}
+   <tr>
+     <td>{{link-to key 'projects.show' this}}</td>
+     <td>{{financing_source}}</td>
+     <td>{{name}}</td>
+     <td>{{sponsor}}</td>
+     <td>{{start_date}}</td>
+     <td>{{end_date}}</td>
+     <td>{{authorized_budget}}</td>
+     <td>{{deposited_budget}}</td>
+     <td>{{committed_budget}}</td>
+     <td>{{spent_budget}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

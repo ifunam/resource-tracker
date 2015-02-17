@@ -5,27 +5,26 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+rails/.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
-/tmp
+rails/log/*
+!rails/log/.keep
+rails/tmp
 
 *.rbc
 capybara-*.html
-.rspec
-/log
-/tmp
-/public/system
-/coverage/
-/spec/tmp
+rails/.rspec
+rails/log
+rails/public/system
+rails/coverage/
+rails/spec/tmp
 **.orig
-rerun.txt
-config/secrets.yml
-config/mongoid.yml
+rails/rerun.txt
+rails/config/secrets.yml
+rails/config/mongoid.yml
 
 ## Environment normalisation:
-/.bundle
-/vendor/bundle
+rails/.bundle
+rails/vendor/bundle
 

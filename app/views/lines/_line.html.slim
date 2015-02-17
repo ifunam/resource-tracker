@@ -1,6 +1,0 @@
- tr
-   td= link_to line.key, project_line_expenditures_path(project_slug:line.project.slug, line_slug: line.slug, format: :json)
-   td= line.name
-   td= number_with_precision line.deposited_budget
-   td= number_with_precision line.committed_budget
-   td= number_with_precision line.spent_budget
