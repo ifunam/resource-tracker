@@ -3,15 +3,13 @@ class Api::V1::ExpendituresController < ApplicationController
 
   def index
     @expenditures = @scope.all
-    respond_to do |format|
-      format.json { render json: @expenditures }
-    end
+    render json: @expenditures
   end
 
   private
-    def determine_scope
-      @project = Project.find params[:project_slug]
-      @line  = @project.lines.find params[:line_slug]
-      @scope = @line.expenditures
-    end
+  def determine_scope
+    @project = Project.find params[:project_slug]
+    @line  = @project.lines.find params[:line_slug]
+    @scope = @line.expenditures
+  end
 end
