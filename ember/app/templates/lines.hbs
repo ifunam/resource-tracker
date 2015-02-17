@@ -1,0 +1,13 @@
+<table class="table table-condensed table-hover table-stripped table-bordered">
+  <tbody>
+    {{#each line in lines}}
+      <tr>
+        <td>{{line.key}}</td>
+        <td>{{line.name}}</td>
+        <td>{{line.deposited_budget}}</td>
+        <td>{{line.committed_budget}}</td>
+        <td>{{line.spent_budget}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+ </table>
