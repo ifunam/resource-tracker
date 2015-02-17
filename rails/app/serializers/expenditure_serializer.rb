@@ -2,7 +2,12 @@ class ExpenditureSerializer < ActiveModel::Serializer
   include ActionView::Helpers::NumberHelper
   include ApplicationHelper
 
-  attributes :id, :date, :motive, :amount, :condition
+  attributes :id,
+             :date,
+             :motive,
+             :amount,
+             :condition,
+             :line_id
 
   def amount
     number_with_precision object.amount
@@ -10,5 +15,9 @@ class ExpenditureSerializer < ActiveModel::Serializer
 
   def id
     object.key
+  end
+
+  def line_id
+    object.line.slug
   end
 end
