@@ -7,7 +7,8 @@ class LineSerializer < ActiveModel::Serializer
              :deposited_budget,
              :committed_budget,
              :spent_budget,
-             :id
+             :id,
+             :project_id
 
   def deposited_budget
     number_with_precision object.deposited_budget
@@ -23,5 +24,9 @@ class LineSerializer < ActiveModel::Serializer
 
   def id
     object.slug
+  end
+
+  def project_id
+    object.project.slug
   end
 end

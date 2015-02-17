@@ -12,7 +12,8 @@ class ProjectSerializer < ActiveModel::Serializer
              :deposited_budget,
              :committed_budget,
              :spent_budget,
-             :id
+             :id,
+             :links
 
   def authorized_budget
     number_with_precision object.authorized_budget
@@ -32,5 +33,9 @@ class ProjectSerializer < ActiveModel::Serializer
 
   def id
     object.slug
+  end
+
+  def links
+    { lines: "/api/v1/projects/#{object.slug}/lines" }
   end
 end
