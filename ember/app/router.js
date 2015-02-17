@@ -9,6 +9,9 @@ Router.map(function() {
   this.route('about');
   this.resource('projects', function() {
     this.route('show', {path: ':project_id'});
+    this.resource('lines', function() {
+      this.route('show', {path: ':line_id'});
+    });
   });
 });
 

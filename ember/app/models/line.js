@@ -8,4 +8,5 @@ export default DS.Model.extend({
   spent_budget: DS.attr('string'),
 
   project: DS.belongsTo('project'),
+  expenditures: DS.hasMany('expenditure', {async: true})
 });

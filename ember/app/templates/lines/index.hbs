@@ -2,7 +2,7 @@
   <tbody>
     {{#each line in lines}}
       <tr>
-        <td>{{line.key}}</td>
+        <td>{{link-to line.key 'lines.show' line}}</td>
         <td>{{line.name}}</td>
         <td>{{line.deposited_budget}}</td>
         <td>{{line.committed_budget}}</td>
