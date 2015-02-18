@@ -9,7 +9,8 @@ class LineSerializer < ActiveModel::Serializer
              :spent_budget,
              :id,
              :project_id,
-             :links
+             :links,
+             :key_and_name
 
   def deposited_budget
     number_with_precision object.deposited_budget
@@ -33,5 +34,9 @@ class LineSerializer < ActiveModel::Serializer
 
   def links
     { expenditures: "/api/v1/projects/#{object.project.slug}/lines/#{object.slug}/expenditures" }
+  end
+
+  def key_and_name
+    object.key_and_name
   end
 end

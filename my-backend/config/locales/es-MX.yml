@@ -39,7 +39,8 @@ es-MX:
         financing_source: Fuente de financiamiento
         name: Nombre
         agreement: Convenio
-        sponsor: Patrocinador
+        sponsor_abbrev: Patrocinador
+        sponsor_name: Patrocinador
         start_date: Fecha de inicio
         end_date: Fecha de término
         inprogress: Vigente o en proceso

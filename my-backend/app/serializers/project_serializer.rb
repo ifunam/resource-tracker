@@ -5,7 +5,9 @@ class ProjectSerializer < ActiveModel::Serializer
   attributes :key,
              :financing_source,
              :name,
-             :sponsor,
+             :agreement,
+             :sponsor_abbrev,
+             :sponsor_name,
              :start_date,
              :end_date,
              :authorized_budget,
@@ -13,7 +15,9 @@ class ProjectSerializer < ActiveModel::Serializer
              :committed_budget,
              :spent_budget,
              :id,
-             :links
+             :links,
+             :sponsor_full_name,
+             :agreement_and_name
 
   def authorized_budget
     number_with_precision object.authorized_budget
@@ -37,5 +41,13 @@ class ProjectSerializer < ActiveModel::Serializer
 
   def links
     { lines: "/api/v1/projects/#{object.slug}/lines" }
+  end
+
+  def sponsor_full_name
+    object.sponsor_full_name
+  end
+
+  def agreement_and_name
+    object.agreement_and_name
   end
 end

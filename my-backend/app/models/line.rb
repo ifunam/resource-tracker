@@ -13,4 +13,8 @@ class Line
   embeds_many :expenditures
 
   slug :key, scope: :project
+
+  def key_and_name
+    ["(#{key})", name].join(' ')
+  end
 end

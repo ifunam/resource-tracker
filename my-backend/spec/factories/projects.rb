@@ -6,7 +6,8 @@ FactoryGirl.define do
     financing_source    { Faker::Company.name }
     name                { Faker::NameMX.full_name }
     agreement           { Random.rand(300..5000) }
-    sponsor             "[IFUNAM] Instituto de Física"
+    sponsor_abbrev      { Faker::Lorem.word.upcase }
+    sponsor_name        { Faker::Lorem.sentence }
     start_date          { Date.today }
     end_date            { Random.rand(600).days.from_now }
     inprogress          { Random.rand(0..1) == 1 }
