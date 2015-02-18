@@ -1,7 +1,18 @@
-<h2 id="title">Welcome to Resource Tracker</h2>
+<div class="container">
+<div class="navbar">
+   <div class="navbar-inner">
+      <a class="brand" href="#">Resource Tracker</a>
+      <ul class="nav">
 
-{{link-to 'Home' 'application'}}
-{{link-to 'Projects' 'projects'}}
-{{link-to 'About' 'about'}}
-
+{{#if session.isAuthenticated}}
+<li>{{link-to 'Projects' 'projects'}}</li>
+<li><button {{ action 'invalidateSession' }}>Logout</button></li>
+{{else}}
+<li>{{#link-to 'login'}}Login{{/link-to}}</li>
+{{/if}}
+</ul>
+</div>
+               
+<hr>
 {{outlet}}
+</div>

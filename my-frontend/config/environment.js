@@ -19,6 +19,16 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise'
+  };
+
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint:'/api/v1/users/sign_in',
+    identificationAttributeName: 'login',
+    resourceName: 'api_v1_user',
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

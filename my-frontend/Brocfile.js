@@ -6,7 +6,6 @@ var app = new EmberApp();
 app.import('bower_components/ic-styled/main.js')
 app.import('bower_components/ember-utils/dist/globals/main.js')
 app.import('bower_components/ember-components/dist/globals/main.js')
-app.import('bower_components/cldr/plurals.js')
 app.import('bower_components/ember-i18n/lib/i18n.js')
 app.import('bower_components/ember-i18n/lib/i18n-plurals.js')
 
