@@ -7,12 +7,12 @@ require 'factory_girl'
 
 @user = User.create(login: 'test', email: 'test@fisica.unam.mx', password: 'qw1234..', password_confirmation: 'qw1234..')
 unless Rails.env.production?
-  50.times do
+ 50.times do
     p = FactoryGirl.build(:project)
     p.save
-    Random.rand(1..20).times do
+    Random.rand(1..30).times do
       l = FactoryGirl.build(:line)
-      Random.rand(1..20).times do
+      Random.rand(1..30).times do
         l.expenditures << FactoryGirl.build(:expenditure)
       end
       p.lines << l

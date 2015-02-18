@@ -3,7 +3,7 @@ class User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
-         :rememberable, :trackable, :validatable
+    :rememberable, :trackable, :validatable
 
   ## Database authenticatable
   field :login,              type: String, default: ""
@@ -34,4 +34,25 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+
+  field :authentication_token, type: String
+
+  before_save :ensure_authentication_token
+
+  has_many :projects
+
+  def ensure_authentication_token
+    if authentication_token.to_s.blank?
+      self.authentication_token = generate_authentication_token
+    end
+  end
+
+  private
+
+  def generate_authentication_token
+    loop do
+      token = Devise.friendly_token
+      break token unless User.where(authentication_token: token).first
+    end
+  end
 end
