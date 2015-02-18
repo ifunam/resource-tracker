@@ -1,18 +1,18 @@
 <div class="container">
-<div class="navbar">
-   <div class="navbar-inner">
+  <div class="navbar">
+    <div class="navbar-inner">
       <a class="brand" href="#">Resource Tracker</a>
       <ul class="nav">
 
-{{#if session.isAuthenticated}}
-<li>{{link-to 'Projects' 'projects'}}</li>
-<li><button {{ action 'invalidateSession' }}>Logout</button></li>
-{{else}}
-<li>{{#link-to 'login'}}Login{{/link-to}}</li>
-{{/if}}
-</ul>
-</div>
-               
-<hr>
-{{outlet}}
+        {{#if session.isAuthenticated}}
+        <li>{{link-to 'Projects' 'projects'}}</li>
+        <li><button {{ action 'invalidateSession' }}>Logout</button></li>
+        {{else}}
+        <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+  <hr>
+    {{outlet}}
 </div>
