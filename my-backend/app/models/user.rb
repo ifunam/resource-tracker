@@ -9,6 +9,7 @@ class User
   field :login,              type: String, default: ""
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
+  field :shared_key,         type: String
 
   ## Recoverable
   #field :reset_password_token,   type: String
