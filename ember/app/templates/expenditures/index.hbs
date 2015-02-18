@@ -1,4 +1,12 @@
 <table class="table table-condensed table-hover table-stripped table-bordered">
+  <thead>
+    <tr>
+      <th>{{t 'expenditure.date' }}</th>
+      <th>{{t 'expenditure.motive' }}</th>
+      <th>{{t 'expenditure.amount' }}</th>
+      <th>{{t 'expenditure.condition' }}</th>
+    </tr>
+  </thead>
   <tbody>
     {{#each expenditure in expenditures}}
       <tr>
