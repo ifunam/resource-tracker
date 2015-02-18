@@ -5,6 +5,7 @@
 #
 require 'factory_girl'
 
+@user = User.create(login: 'test', email: 'test@fisica.unam.mx', password: 'qw1234..', password_confirmation: 'qw1234..')
 unless Rails.env.production?
   50.times do
     p = FactoryGirl.build(:project)
@@ -16,6 +17,7 @@ unless Rails.env.production?
       end
       p.lines << l
     end
+    p.user = @user
     p.save
   end
 end
