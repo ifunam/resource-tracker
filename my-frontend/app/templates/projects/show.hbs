@@ -1,2 +1,21 @@
-<h4>{{name}}</h4>
+<h3>{{t 'project.one'}}</h3>
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+        <th>{{t "project.agreement_and_name"}}</th>
+        <th>{{t "project.sponsor_full_name"}}</th>
+        <th>{{t "project.agreement"}}</th>
+        <th>{{t "project.authorized_budget"}}</th>
+        <th>{{t "project.deposited_budget"}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{agreement_and_name}}</td>
+      <td>{{sponsor_full_name}}</td>
+      <td>{{agreement}}</td>
+      <td>{{authorized_budget}}</td>
+      <td>{{deposited_budget}}</td>
+    </tr>
+</table>
 {{partial 'lines/index'}}

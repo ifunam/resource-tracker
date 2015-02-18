@@ -2,24 +2,35 @@ var TRANSLATIONS = {
   'project.key': 'Identificador',
   'project.financing_source': 'Fuente de financiamiento',
   'project.name': 'Nombre',
-  'project.sponsor': 'Patrocinador',
+  'project.agreement': 'Convenio',
+  'project.sponsor_name': 'Patrocinador',
+  'project.sponsor_abbrev': 'Patrocinador',
   'project.start_date': 'Fecha de inicio',
   'project.end_date': 'Fecha de término',
   'project.authorized_budget': 'Presupuesto autorizado',
   'project.deposited_budget': 'Presupuesto depositado',
   'project.committed_budget': 'Presupuesto comprometido',
   'project.spent_budget': 'Presupuesto gastado',
+  'project.agreement_and_name': 'Proyecto',
+  'project.sponsor_full_name': 'Patrocinador',
+  'project.one': 'Información del proyecto',
+  'project.others': 'Proyectos vigentes',
 
-  'line.key': 'Clave',
-  'line.name': 'Partida',
+  'line.key': 'Partida',
+  'line.name': 'Nombre',
   'line.deposited_budget': 'Presupuesto depositado',
   'line.committed_budget': 'Presupuesto comprometido',
   'line.spent_budget': 'Presupuesto gastado',
+  'line.key_and_name': 'Partida',
+  'line.one': 'Información de la partida',
+  'line.others': 'Partidas',
 
   'expenditure.date': 'Fecha',
   'expenditure.motive': 'Motivo',
   'expenditure.amount': 'Cantidad',
-  'expenditure.condition': 'Situación'
+  'expenditure.condition': 'Situación',
+  'expenditure.one': 'Gasto',
+  'expenditure.other': 'Gastos'
 };
 
 export default {
