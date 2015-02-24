@@ -6,7 +6,7 @@ class Expenditure
   field :date, type: Date
   field :motive, type: String
   field :amount, type: Float
-  field :condition, type: String
+  field :status, type: String
 
   embedded_in :line
 end

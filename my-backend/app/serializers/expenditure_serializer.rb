@@ -6,7 +6,7 @@ class ExpenditureSerializer < ActiveModel::Serializer
              :date,
              :motive,
              :amount,
-             :condition,
+             :status,
              :line_id
 
   def amount

@@ -62,5 +62,5 @@ es-MX:
         date: Fecha de trámite
         motive: Motivo(s)
         amount: Importe
-        condition: Situación
+        status: Situación
         line: Partida
