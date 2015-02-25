@@ -28,7 +28,7 @@ var TRANSLATIONS = {
   'expenditure.date': 'Fecha',
   'expenditure.motive': 'Motivo',
   'expenditure.amount': 'Cantidad',
-  'expenditure.condition': 'Situación',
+  'expenditure.status': 'Situación',
   'expenditure.one': 'Gasto',
   'expenditure.other': 'Gastos'
 };
