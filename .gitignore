@@ -23,6 +23,8 @@ my-backend/spec/tmp
 my-backend/rerun.txt
 my-backend/config/secrets.yml
 my-backend/config/mongoid.yml
+my-backend/db/json/*.json.gz
+my-backend/db/json/data_migration/backup
 
 ## Environment normalisation:
 my-backend/.bundle
