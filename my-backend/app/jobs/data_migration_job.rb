@@ -1,6 +1,5 @@
 require 'zlib'
 require 'json'
-require 'pry'
 class DataMigrationJob < ActiveJob::Base
   queue_as :default #:low_priority
 
