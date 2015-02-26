@@ -3,28 +3,30 @@ require 'json'
 class DataMigrationJob < ActiveJob::Base
   queue_as :default #:low_priority
 
-  def perform(path)
-    destroy_all
-    JSON.parse(Zlib::GzipReader.open(path).read)['projects'].each do |p|
-      if p.has_key? 'user'
-        user = p['user']
-        p.delete 'user'
-      end
-
-      if p.has_key? 'lines'
-        lines = p['lines']
-        lines.each do |l|
-          l['expenditures_attributes'] = l['expenditures']
-          l.delete 'expenditures'
+  def perform(dm)
+    if File.exist? dm.backup.path
+      destroy_all
+      JSON.parse(Zlib::GzipReader.open(dm.backup.path).read)['projects'].each do |p|
+        if p.has_key? 'user'
+          user = p['user']
+          p.delete 'user'
         end
-        p.delete 'lines'
+
+        if p.has_key? 'lines'
+          lines = p['lines']
+          lines.each do |l|
+            l['expenditures_attributes'] = l['expenditures']
+            l.delete 'expenditures'
+          end
+          p.delete 'lines'
+        end
+
+        @project = Project.new(p)
+        @project.user = set_user(user)
+        @project.lines_attributes = lines
+        @project.save if @project.valid?
+        dm.update_attribute(:migrated, true)
       end
-
-      @project = Project.new(p)
-      @project.user = set_user(user)
-      @project.lines_attributes = lines
-      @project.save if @project.valid?
-
     end
   end
 

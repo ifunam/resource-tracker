@@ -8,6 +8,6 @@ class DataMigration
   mount_uploader :backup, BackupUploader,  type: String
 
   after_create do |dm|
-    DataMigrationJob.perform_later dm.backup.path
+    DataMigrationJob.perform_later dm
   end
 end
