@@ -14,6 +14,8 @@ class Line
 
   slug :key, scope: :project
 
+  accepts_nested_attributes_for :expenditures
+
   def key_and_name
     ["(#{key})", name].join(' ')
   end
