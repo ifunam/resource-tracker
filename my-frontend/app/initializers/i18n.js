@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 var TRANSLATIONS = {
   'project.key': 'Identificador',
   'project.financing_source': 'Fuente de financiamiento',
