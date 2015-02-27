@@ -1,4 +1,3 @@
-require 'pry'
 class DataMigration
   include Mongoid::Document
   include Mongoid::Timestamps

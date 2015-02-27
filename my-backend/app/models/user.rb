@@ -42,6 +42,10 @@ class User
 
   has_many :projects
 
+  def self.serialize_into_session(record)
+    [record.id.to_s, record.authenticatable_salt]
+  end
+
   def ensure_authentication_token
     if authentication_token.to_s.blank?
       self.authentication_token = generate_authentication_token

@@ -24,7 +24,7 @@ class Project
   slug :name
 
   def sponsor_full_name
-    "[#{sponsor_abbrev}] " + sponsor_name
+    "[#{sponsor_abbrev}] " + sponsor_name.to_s
   end
 
   def agreement_and_name

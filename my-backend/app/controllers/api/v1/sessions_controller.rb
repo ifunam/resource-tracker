@@ -6,6 +6,7 @@ class Api::V1::SessionsController < Devise::SessionsController
         self.resource = warden.authenticate!(auth_options)
         sign_in(resource_name, resource)
         data = {
+          id:         self.resource.id,
           user_token: self.resource.authentication_token,
           user_email: self.resource.email
         }
