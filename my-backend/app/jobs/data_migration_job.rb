@@ -1,12 +1,13 @@
 require 'zlib'
 require 'json'
 class DataMigrationJob < ActiveJob::Base
-  queue_as :default #:low_priority
+  queue_as :default
 
-  def perform(dm)
-    if File.exist? dm.backup.path
+  def perform(*args)
+    backup_path = args.first
+    if File.exist? backup_path
       destroy_all
-      JSON.parse(Zlib::GzipReader.open(dm.backup.path).read)['projects'].each do |p|
+      JSON.parse(Zlib::GzipReader.open(backup_path).read)['projects'].each do |p|
         if p.has_key? 'user'
           user = p['user']
           p.delete 'user'
@@ -25,7 +26,6 @@ class DataMigrationJob < ActiveJob::Base
         @project.user = set_user(user)
         @project.lines_attributes = lines
         @project.save if @project.valid?
-        dm.update_attribute(:migrated, true)
       end
     end
   end

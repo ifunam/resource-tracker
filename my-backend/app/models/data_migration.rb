@@ -1,3 +1,4 @@
+require 'pry'
 class DataMigration
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -8,6 +9,6 @@ class DataMigration
   mount_uploader :backup, BackupUploader,  type: String
 
   after_create do |dm|
-    DataMigrationJob.perform_later dm
+    DataMigrationJob.perform_later dm.backup.path
   end
 end
