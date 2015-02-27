@@ -21,7 +21,7 @@ class Project
   belongs_to :user
 
   accepts_nested_attributes_for :lines
-  slug :name
+  slug :name, :id
 
   def sponsor_full_name
     "[#{sponsor_abbrev}] " + sponsor_name.to_s

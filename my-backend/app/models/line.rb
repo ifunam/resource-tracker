@@ -12,7 +12,7 @@ class Line
   embedded_in :project, inverse_of: :lines
   embeds_many :expenditures
 
-  slug :key, scope: :project
+  slug :key, :id, scope: :project
 
   accepts_nested_attributes_for :expenditures
 
