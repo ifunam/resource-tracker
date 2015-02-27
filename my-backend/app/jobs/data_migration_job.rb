@@ -15,17 +15,26 @@ class DataMigrationJob < ActiveJob::Base
 
         if p.has_key? 'lines'
           lines = p['lines']
-          lines.each do |l|
-            l['expenditures_attributes'] = l['expenditures']
-            l.delete 'expenditures'
-          end
           p.delete 'lines'
         end
 
         @project = Project.new(p)
         @project.user = set_user(user)
-        @project.lines_attributes = lines
         @project.save if @project.valid?
+
+        lines.each do |l|
+          expenditures = l['expenditures']
+          l.delete 'expenditures'
+
+          @line = Line.new(l)
+          expenditures.each do |e|
+            @line.expenditures << Expenditure.new(e)
+          end
+
+          @project.lines << @line
+        end
+        @project.save
+
       end
     end
   end
