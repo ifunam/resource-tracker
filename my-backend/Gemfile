@@ -12,6 +12,8 @@ gem 'mongoid_slug', '~> 4.0.0'
 gem 'active_model_serializers', '~> 0.9.3'
 gem 'devise', '~> 3.4.1'
 gem 'carrierwave-mongoid', '~> 0.7.1'
+gem 'devise_ldap_authenticatable', '~> 0.8.1', github: 'cschiewek/devise_ldap_authenticatable', ref: ' 2cb27338d36d3cd965a14a79f0a7fb3a0b4a52fa'
+gem 'net-ldap', '~> 0.5.1'
 
 group :development, :test do
   gem 'ffaker', '~> 1.32.1'
