@@ -11,7 +11,7 @@
   <tbody>
     {{#each expenditure in expenditures}}
       <tr>
-        <td>{{expenditure.date}}</td>
+        <td>{{formatted-date expenditure.date}}</td>
         <td>{{expenditure.motive}}</td>
         <td>{{expenditure.amount}}</td>
         <td>{{expenditure.status}}</td>

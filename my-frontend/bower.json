@@ -16,6 +16,7 @@
     "pretender": "0.1.0",
     "ember-i18n": "~3.0.0-beta.4",
     "ember-simple-auth": "0.7.3",
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "moment": "~2.9.0"
   }
 }

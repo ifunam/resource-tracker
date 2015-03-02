@@ -13,6 +13,10 @@ var App = Ember.Application.extend({
   ApplicationSerializer: DS.ActiveModelSerializer.extend({})
 });
 
+Ember.Handlebars.registerBoundHelper('formatted-date', function(value) {
+  return moment(value).format('YYYY-MM-DD');
+});
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
