@@ -20,15 +20,18 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/mongoid'
-  require 'devise_ldap_authenticatable'
 
-  config.ldap_logger = true
-  config.ldap_create_user = false
-  config.ldap_update_password = false
-  config.ldap_config = "#{Rails.root}/config/ldap.yml"
-  config.ldap_check_group_membership = false
-  config.ldap_check_attributes = false
-  config.ldap_use_admin_to_bind = false
+  if File.exist? "#{Rails.root.to_s}/config/ldap.yml"
+    require 'devise_ldap_authenticatable'
+
+    config.ldap_logger = true
+    config.ldap_create_user = false
+    config.ldap_update_password = false
+    config.ldap_config = "#{Rails.root}/config/ldap.yml"
+    config.ldap_check_group_membership = false
+    config.ldap_check_attributes = false
+    config.ldap_use_admin_to_bind = false
+  end
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

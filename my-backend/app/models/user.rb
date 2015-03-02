@@ -2,7 +2,12 @@ class User
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :ldap_authenticatable, :validatable, :lockable
+
+  if File.exist? "#{Rails.root.to_s}/config/ldap.yml"
+    devise :ldap_authenticatable, :validatable, :lockable
+  else
+    devise :database_authenticatable, :validatable, :lockable
+  end
 
   ## Database authenticatable
   field :login,              type: String, default: ""
