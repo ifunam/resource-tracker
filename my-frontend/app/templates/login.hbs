@@ -1,9 +1,18 @@
-<form id="login" {{action 'authenticate' on='submit'}}>
-    <label for="identification">Login</label>
-    {{input id='identification' placeholder='Enter Login'
+<form id="login" {{action 'authenticate' on='submit'}} class="form-inline">
+    <div class="form-group">
+      <label for="identification">{{t 'user.login'}}</label>
+      {{input id='identification' placeholder='Usuario'
             value=identification}}
-    <label for="password">Password</label>
-    {{input id='password' placeholder='Enter Password'
+      <label for="password">{{t 'user.password'}}</label>
+      {{input id='password' placeholder='Contraseña'
             type='password' value=password}}
-    <button id="submit" type="submit">Login</button>
+    </div>
+    <button id="submit" type="submit" class="btn btn btn-primary">{{t 'user.actions.login'}}</button>
 </form>
+
+<br/>
+<p class='alert alert-info'>
+    <div class='i icon-info-sign'></div>
+    Para entrar al sistema debes usar el usuario y contraseña del correo electrónico del Instituto de Física.
+    Por ejemplo, si tu cuenta de correo es <b>roberto@fisica.unam.mx</b>, los datos para entrar al sistema son: <br/> <br/> <b>Usuario:</b> roberto <br/> <b>Contraseña:</b>*******
+</p>

@@ -2,7 +2,10 @@ import Ember from 'ember';
 import config from './config/environment';
 
 var Router = Ember.Router.extend({
-  location: config.locationType
+  location: config.locationType,
+  redirect: function () {
+    this.transitionTo('projects');
+  }
 });
 
 Router.map(function() {

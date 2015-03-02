@@ -32,7 +32,12 @@ var TRANSLATIONS = {
   'expenditure.amount': 'Cantidad',
   'expenditure.status': 'Situación',
   'expenditure.one': 'Gasto',
-  'expenditure.other': 'Gastos'
+  'expenditure.other': 'Gastos',
+
+  'user.login': 'Usuario',
+  'user.password': 'Contraseña',
+  'user.actions.login': 'Entrar',
+  'user.actions.logout': 'Salir',
 };
 
 export default {

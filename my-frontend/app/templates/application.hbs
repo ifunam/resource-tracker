@@ -1,18 +1,21 @@
-<div class="container">
-  <div class="navbar">
-    <div class="navbar-inner">
-      <a class="brand" href="#">Resource Tracker</a>
-      <ul class="nav">
-
-        {{#if session.isAuthenticated}}
-        <li>{{link-to 'Projects' 'projects'}}</li>
-        <li><button {{ action 'invalidateSession' }}>Logout</button></li>
-        {{else}}
-        <li>{{#link-to 'login'}}Login{{/link-to}}</li>
-        {{/if}}
-      </ul>
-    </div>
+<div class="navbar navbar-inverse navbar-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Resource Tracker</a>
+    <ul class="nav navbar-nav">
+      {{#if session.isAuthenticated}}
+        <li>{{link-to 'Proyectos vigentes' 'projects'}}</li>
+      {{/if}}
+    </ul>
   </div>
-  <hr>
-    {{outlet}}
+</div>
+
+{{#if session.isAuthenticated}}
+  <div class="pull-right">
+    <b class="text-success">{{session.user_email}}</b>
+    <button class="btn btn-link" {{ action 'invalidateSession' }}>{{t 'user.actions.logout'}}</button>
+  </div>
+{{/if}}
+
+<div class="container">
+  {{outlet}}
 </div>
