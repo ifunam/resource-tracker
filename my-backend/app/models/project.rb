@@ -20,7 +20,6 @@ class Project
   embeds_many :lines, inverse_of: :project
   belongs_to :user
 
-  accepts_nested_attributes_for :lines
   slug :name, :key
 
   def sponsor_full_name
