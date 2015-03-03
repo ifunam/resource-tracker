@@ -20,6 +20,8 @@
   </tbody>
 </table>
 
-{{partial 'lines/index'}}
+{{#if has_lines}}
+  {{partial 'lines/index'}}
+{{/if}}
 
 {{#link-to 'projects' class='btn btn-success' }} {{t 'actions.back'}} {{/link-to}}

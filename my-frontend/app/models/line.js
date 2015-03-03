@@ -9,5 +9,6 @@ export default DS.Model.extend({
   key_and_name: DS.attr('string'),
 
   project: DS.belongsTo('project'),
-  expenditures: DS.hasMany('expenditure', {async: true})
+  expenditures: DS.hasMany('expenditure', {async: true}),
+  has_expenditures: DS.attr('boolean')
 });

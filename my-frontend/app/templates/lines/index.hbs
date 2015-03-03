@@ -12,7 +12,11 @@
   <tbody>
     {{#each line in lines}}
       <tr>
-        <td>{{link-to line.key 'lines.show' line}}</td>
+        {{#if line.has_expenditures}}
+          <td>{{link-to line.key 'lines.show' line}}</td>
+        {{else}}
+          <td>{{line.key}}</td>
+        {{/if}}
         <td>{{line.name}}</td>
         <td>{{line.deposited_budget}}</td>
         <td>{{line.committed_budget}}</td>

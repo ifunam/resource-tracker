@@ -17,7 +17,8 @@ class ProjectSerializer < ActiveModel::Serializer
              :id,
              :links,
              :sponsor_full_name,
-             :agreement_and_name
+             :agreement_and_name,
+             :has_lines
 
   def authorized_budget
     number_with_precision object.authorized_budget
@@ -49,5 +50,9 @@ class ProjectSerializer < ActiveModel::Serializer
 
   def agreement_and_name
     object.agreement_and_name
+  end
+
+  def has_lines
+    object.lines.count > 0
   end
 end

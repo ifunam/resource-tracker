@@ -10,7 +10,8 @@ class LineSerializer < ActiveModel::Serializer
              :id,
              :project_id,
              :links,
-             :key_and_name
+             :key_and_name,
+             :has_expenditures
 
   def deposited_budget
     number_with_precision object.deposited_budget
@@ -38,5 +39,9 @@ class LineSerializer < ActiveModel::Serializer
 
   def key_and_name
     object.key_and_name
+  end
+
+  def has_expenditures
+    object.expenditures.count > 0
   end
 end

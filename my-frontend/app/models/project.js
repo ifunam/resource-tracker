@@ -15,6 +15,6 @@ export default DS.Model.extend({
   spent_budget: DS.attr('string'),
   sponsor_full_name: DS.attr('string'),
   agreement_and_name: DS.attr('string'),
-
-  lines: DS.hasMany('line', {async: true})
+  lines: DS.hasMany('line', {async: true}),
+  has_lines: DS.attr('boolean')
 });
