@@ -38,6 +38,8 @@ var TRANSLATIONS = {
   'user.password': 'Contraseña',
   'user.actions.login': 'Entrar',
   'user.actions.logout': 'Salir',
+
+  'actions.back': 'Regresar'
 };
 
 export default {
