@@ -13,3 +13,6 @@ frontend
 --------
 The frontend is an emberjs application to consume our rails api.
 
+License
+-------
+This program is released under the [MIT License](http://www.opensource.org/licenses/MIT).
