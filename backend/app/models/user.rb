@@ -3,7 +3,7 @@ class User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  if File.exist? "#{Rails.root.to_s}/config/ldap.yml"
+  if File.exist? File.join(Rails.root,"config/ldap.yml")
     devise :ldap_authenticatable, :validatable, :lockable
   else
     devise :database_authenticatable, :validatable, :lockable
@@ -51,9 +51,8 @@ class User
   end
 
   def ensure_authentication_token
-    if authentication_token.to_s.blank?
-      self.authentication_token = generate_authentication_token
-    end
+    return unless authentication_token.to_s.blank?
+    self.authentication_token = generate_authentication_token
   end
 
   private
