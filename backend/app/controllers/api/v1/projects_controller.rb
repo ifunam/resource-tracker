@@ -3,12 +3,12 @@ class Api::V1::ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = current_api_v1_user.projects.all.page(params[:page]||1)
+    @projects = current_api_v1_user.projects.all.page(params[:page] || 1)
     render json: @projects,
            meta: {
-                current_page: @projects.current_page,
-                    per_page: @projects.default_per_page,
-                 total_pages: @projects.total_pages
+             current_page: @projects.current_page,
+             per_page: @projects.default_per_page,
+             total_pages: @projects.total_pages
            }
   end
 
@@ -18,7 +18,7 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
   def set_project
     @project = Project.find(params[:id])
   end

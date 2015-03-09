@@ -7,6 +7,7 @@ class Api::V1::LinesController < ApplicationController
   end
 
   private
+
   def determine_scope
     @project = Project.find params[:project_slug]
     @scope = @project.lines
