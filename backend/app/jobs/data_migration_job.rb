@@ -49,7 +49,7 @@ class DataMigrationJob < ActiveJob::Base
     @project = Project.new(p)
     @project.user = @user
     @project.save # Save it before to avoid troubles with its childrens
-    @project.lines << @lines
+    @project.lines = @lines
     @project.save
   end
 end
