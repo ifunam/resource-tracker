@@ -1,12 +1,12 @@
-require 'zlib'
 require 'json'
+require 'zlib'
 
 class DataMigrationJob < ActiveJob::Base
   queue_as :default
 
   def perform(backup_path)
     return unless File.exist? backup_path
-    destroy_all
+    [Expenditure, Line, Project].collect(&:destroy_all)
     @json = Zlib::GzipReader.open(backup_path).read
     JSON.parse(@json)['projects'].each do |p|
       import_project(p)
@@ -14,10 +14,6 @@ class DataMigrationJob < ActiveJob::Base
   end
 
   private
-
-  def destroy_all
-    [Expenditure, Line, Project].collect(&:destroy_all)
-  end
 
   def import_user(u)
     if User.where(login: u['login']).exists?
