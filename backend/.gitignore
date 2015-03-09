@@ -34,3 +34,6 @@ gvendor/bundle
 config/ldap.yml
 config/database.yml
 config/secret.yml
+db/json/data_migration
+tmp/*
+log/*
