@@ -9,8 +9,6 @@ my-backend/.bundle
 
 # Ignore all logfiles and tempfiles.
 my-backend/log/*
-!my-backend/log/.keep
-my-backend/tmp
 
 *.rbc
 capybara-*.html

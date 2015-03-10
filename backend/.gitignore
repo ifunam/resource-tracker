@@ -36,4 +36,6 @@ config/database.yml
 config/secrets.yml
 db/json/data_migration
 tmp/*
+!tmp/.keep
 log/*
+
