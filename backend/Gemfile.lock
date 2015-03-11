@@ -331,6 +331,7 @@ DEPENDENCIES
   capistrano3-puma!
   carrierwave-mongoid (~> 0.7.1)
   daemons (~> 1.2.1)
+  delayed_job (~> 4.0.6)
   delayed_job_mongoid (~> 2.1.0)
   devise (~> 3.4.1)
   devise_ldap_authenticatable (~> 0.8.1)!
