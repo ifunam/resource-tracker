@@ -4,13 +4,15 @@ require 'zlib'
 class DataMigrationJob < ActiveJob::Base
   queue_as :default
 
-  def perform(backup_path)
-    return unless File.exist? backup_path
+  def perform(record_id)
+    record = DataMigration.find(record_id)
+    return unless File.exist? record.backup.path
     [Expenditure, Line, Project].collect(&:destroy_all)
-    @json = Zlib::GzipReader.open(backup_path).read
+    @json = Zlib::GzipReader.open(record.backup.path).read
     JSON.parse(@json)['projects'].each do |p|
       import_project(p)
     end
+    record.update_attribute :migrated, true
   end
 
   private
