@@ -22,6 +22,7 @@ gem 'capistrano3-puma', github: 'seuros/capistrano-puma'
 gem 'delayed_job', '~> 4.0.6'
 gem 'delayed_job_mongoid', '~> 2.1.0'
 gem 'daemons', '~> 1.2.1'
+gem 'rack-cors', :require => 'rack/cors'
 # gem 'capistrano-rvm', github: "capistrano/rvm"
 
 group :development, :test do
