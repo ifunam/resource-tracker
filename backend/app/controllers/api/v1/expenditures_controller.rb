@@ -1,4 +1,4 @@
-class Api::V1::ExpendituresController < ApplicationController
+class Api::V1::ExpendituresController < Api::V1::BaseController
   before_filter :determine_scope
 
   def index

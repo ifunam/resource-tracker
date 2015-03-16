@@ -1,4 +1,4 @@
-class Api::V1::LinesController < ApplicationController
+class Api::V1::LinesController < Api::V1::BaseController
   before_filter :determine_scope
 
   def index
