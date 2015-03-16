@@ -19,6 +19,9 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['apiHost'] = 'http://localhost:9292';
+  ENV['serverTokenEndpoint'] = '/api/v1/users/sign_in';
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -40,11 +43,12 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV['apiHost'] = 'https://host:443';
+    ENV['serverTokenEndpoint'] = ENV['apiHost'] + '/api/v1/users/sign_in';
   }
 
   ENV['simple-auth-devise'] = {
-    serverTokenEndpoint:'/api/v1/users/sign_in',
+    serverTokenEndpoint: ENV['serverTokenEndpoint'],
     identificationAttributeName: 'login',
     tokenAttributeName: 'token',
     resourceName: 'api_v1_user'

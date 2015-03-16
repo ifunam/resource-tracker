@@ -1,6 +1,7 @@
 import DS from 'ember-data';
+ import config from '../config/environment';
 export default DS.RESTAdapter.extend({
-  namespace: 'api/v1'
-  // host: 'https://presupuestos.fisica.unam.mx:443'
+  namespace: 'api/v1',
+  host: config.apiHost
 });
 
