@@ -19,17 +19,6 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise',
-    routeAfterAuthentication: 'projects'
-  };
-
-  ENV['simple-auth-devise'] = {
-    serverTokenEndpoint:'/api/v1/users/sign_in',
-    identificationAttributeName: 'login',
-    resourceName: 'api_v1_user',
-  };
-
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -53,6 +42,21 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint:'/api/v1/users/sign_in',
+    identificationAttributeName: 'login',
+    tokenAttributeName: 'token',
+    resourceName: 'api_v1_user'
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise',
+    routeAfterAuthentication: 'projects',
+    routeIfAlreadyAuthenticated: 'projects',
+    authenticationRoute: 'login',
+    crossOriginWhitelist: ['*']
+  };
 
   return ENV;
 };
