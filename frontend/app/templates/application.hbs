@@ -11,7 +11,7 @@
 
 {{#if session.isAuthenticated}}
   <div class="pull-right">
-    <b class="text-success">{{session.user_email}}</b>
+    <b class="text-success">{{session.login}}</b>
     <button class="btn btn-link" {{ action 'invalidateSession' }}>{{t 'user.actions.logout'}}</button>
   </div>
 {{/if}}
