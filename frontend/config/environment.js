@@ -19,7 +19,7 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['apiHost'] = 'http://localhost:9292';
+  ENV['apiHost'] = 'http://localhost:9292'; // 'http://localhost:3000'
   ENV['serverTokenEndpoint'] = '/api/v1/users/sign_in';
 
   if (environment === 'development') {
@@ -43,7 +43,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV['apiHost'] = 'https://host:443';
+    ENV['apiHost'] = 'https://host.domain:443';
     ENV['serverTokenEndpoint'] = ENV['apiHost'] + '/api/v1/users/sign_in';
   }
 
@@ -60,6 +60,10 @@ module.exports = function(environment) {
     routeIfAlreadyAuthenticated: 'projects',
     authenticationRoute: 'login',
     crossOriginWhitelist: ['*']
+  };
+
+  ENV.contentSecurityPolicy = {
+    'connect-src': "'self' " + ENV['apiHost'],
   };
 
   return ENV;
