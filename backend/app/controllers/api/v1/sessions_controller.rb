@@ -4,9 +4,9 @@ class Api::V1::SessionsController < Devise::SessionsController
   def create
     respond_to do |format|
       format.json do
-        resource = warden.authenticate!(auth_options)
-        sign_in(resource_name, resource)
-        render json: response_data, status: 201
+        @resource = warden.authenticate!(auth_options)
+        sign_in(resource_name, @resource)
+        render json: response_data.to_json, status: 201
       end
     end
   end
@@ -15,9 +15,8 @@ class Api::V1::SessionsController < Devise::SessionsController
 
   def response_data
     {
-      id:         resource.id,
-      user_token: resource.authentication_token,
-      user_email: resource.email
+      token: @resource.authentication_token,
+      login: @resource.login
     }
   end
 end
