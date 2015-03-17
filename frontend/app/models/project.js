@@ -13,6 +13,7 @@ export default DS.Model.extend({
   deposited_budget: DS.attr('string'),
   committed_budget: DS.attr('string'),
   spent_budget: DS.attr('string'),
+  balance: DS.attr('string'),
   sponsor_full_name: DS.attr('string'),
   agreement_and_name: DS.attr('string'),
   lines: DS.hasMany('line', {async: true}),

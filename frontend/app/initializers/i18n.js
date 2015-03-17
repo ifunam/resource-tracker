@@ -13,6 +13,7 @@ var TRANSLATIONS = {
   'project.deposited_budget': 'Presupuesto depositado',
   'project.committed_budget': 'Presupuesto comprometido',
   'project.spent_budget': 'Presupuesto gastado',
+  'project.balance': 'Saldo',
   'project.agreement_and_name': 'Proyecto',
   'project.sponsor_full_name': 'Patrocinador',
   'project.one': 'Información del proyecto',

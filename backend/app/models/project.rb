@@ -29,4 +29,8 @@ class Project
   def agreement_and_name
     [agreement, "(#{start_date.year})", name].join(' ')
   end
+
+  def balance
+    authorized_budget.to_f - committed_budget.to_f - spent_budget.to_f
+  end
 end

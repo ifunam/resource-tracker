@@ -14,6 +14,7 @@ class ProjectSerializer < ActiveModel::Serializer
              :deposited_budget,
              :committed_budget,
              :spent_budget,
+             :balance,
              :id,
              :links,
              :sponsor_full_name,
@@ -34,6 +35,10 @@ class ProjectSerializer < ActiveModel::Serializer
 
   def spent_budget
     number_with_precision object.spent_budget
+  end
+
+  def balance
+    number_with_precision object.balance
   end
 
   def id
