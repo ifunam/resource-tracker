@@ -21,7 +21,8 @@ class DataMigrationJob < ActiveJob::Base
     if User.where(login: u['login']).exists?
       User.where(login: u['login']).first
     else
-      User.create(u.merge!(password: u['key'], password_confirmation: u['key']))
+      h = { password: u['key'], password_confirmation: u['key'] }
+      User.create(u.merge!(h))
     end
   end
 
