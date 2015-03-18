@@ -1,27 +1,29 @@
 <h3>{{t 'project.one'}}</h3>
-<table class="table table-condensed table-bordered">
-  <thead>
-    <tr>
+<div class="box box-with-radius">
+  <table class="table table-condensed">
+    <thead>
+      <tr>
         <th>{{t "project.agreement_and_name"}}</th>
         <th>{{t "project.sponsor_full_name"}}</th>
         <th>{{t "project.agreement"}}</th>
         <th>{{t "project.authorized_budget"}}</th>
         <th>{{t "project.deposited_budget"}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{agreement_and_name}}</td>
-      <td>{{sponsor_full_name}}</td>
-      <td>{{agreement}}</td>
-      <td>{{authorized_budget}}</td>
-      <td>{{deposited_budget}}</td>
-    </tr>
-  </tbody>
-</table>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{agreement_and_name}}</td>
+        <td>{{sponsor_full_name}}</td>
+        <td>{{agreement}}</td>
+        <td>{{authorized_budget}}</td>
+        <td>{{deposited_budget}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {{#if has_lines}}
-  {{partial 'lines/index'}}
+{{partial 'lines/index'}}
 {{/if}}
 
 {{#link-to 'projects' class='btn btn-success' }} {{t 'actions.back'}} {{/link-to}}

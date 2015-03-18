@@ -1,18 +1,20 @@
 <h3>{{t 'line.one'}}</h3>
-<table class="table table-condensed table-bordered">
-  <thead>
-    <tr>
+<div class="box box-with-radius">
+  <table class="table table-condensed">
+    <thead>
+      <tr>
         <th>{{t "line.key_and_name"}}</th>
         <th>{{t "project.agreement_and_name"}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{key_and_name}}</td>
-      <td>{{project.agreement_and_name}}</td>
-    </tr>
-  </tbody>
-</table>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{key_and_name}}</td>
+        <td>{{project.agreement_and_name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {{partial 'expenditures/index'}}
 

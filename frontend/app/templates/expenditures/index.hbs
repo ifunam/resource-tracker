@@ -1,21 +1,23 @@
 <h3>{{t 'expenditure.other'}}</h3>
-<table class="table table-condensed table-hover table-stripped table-bordered">
-  <thead>
-    <tr>
-      <th>{{t 'expenditure.date' }}</th>
-      <th>{{t 'expenditure.motive' }}</th>
-      <th>{{t 'expenditure.amount' }}</th>
-      <th>{{t 'expenditure.status' }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each expenditure in expenditures}}
+<div class="box box-with-radius">
+  <table class="table table-striped table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>{{t 'expenditure.date' }}</th>
+        <th>{{t 'expenditure.motive' }}</th>
+        <th>{{t 'expenditure.amount' }}</th>
+        <th>{{t 'expenditure.status' }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each expenditure in expenditures}}
       <tr>
         <td>{{formatted-date expenditure.date}}</td>
         <td>{{expenditure.motive}}</td>
         <td>{{expenditure.amount}}</td>
         <td>{{expenditure.status}}</td>
       </tr>
-    {{/each}}
-  </tbody>
- </table>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

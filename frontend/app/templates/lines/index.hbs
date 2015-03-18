@@ -1,22 +1,23 @@
 <h3>{{t 'line.others'}}</h3>
-<table class="table table-condensed table-hover table-stripped table-bordered">
-  <thead>
-    <tr>
-      <th>{{t 'line.key' }}</th>
-      <th>{{t 'line.name' }}</th>
-      <th>{{t 'line.deposited_budget' }}</th>
-      <th>{{t 'line.committed_budget' }}</th>
-      <th>{{t 'line.spent_budget' }}</th>
-      <th>{{t 'line.balance' }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each line in lines}}
+<div class="box box-with-radius">
+  <table class="table table-striped table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>{{t 'line.key' }}</th>
+        <th>{{t 'line.name' }}</th>
+        <th>{{t 'line.deposited_budget' }}</th>
+        <th>{{t 'line.committed_budget' }}</th>
+        <th>{{t 'line.spent_budget' }}</th>
+        <th>{{t 'line.balance' }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each line in lines}}
       <tr>
         {{#if line.has_expenditures}}
-          <td>{{link-to line.key 'lines.show' line}}</td>
+        <td>{{link-to line.key 'lines.show' line}}</td>
         {{else}}
-          <td>{{line.key}}</td>
+        <td>{{line.key}}</td>
         {{/if}}
         <td>{{line.name}}</td>
         <td>{{line.deposited_budget}}</td>
@@ -24,6 +25,7 @@
         <td>{{line.spent_budget}}</td>
         <td>{{line.balance}}</td>
       </tr>
-    {{/each}}
-  </tbody>
- </table>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

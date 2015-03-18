@@ -1,37 +1,37 @@
 <h3>{{t 'project.others'}}</h3>
 <div class="box box-with-radius">
-<table class="table table-striped table-condensed table-hover table-responsive ">
-  <thead>
-    <tr>
-      <th>{{t 'project.key' }}</th>
-      <th>{{t 'project.financing_source' }}</th>
-      <th>{{t 'project.name' }}</th>
-      <th>{{t 'project.sponsor_abbrev' }}</th>
-      <th>{{t 'project.start_date' }}</th>
-      <th>{{t 'project.end_date' }}</th>
-      <th>{{t 'project.authorized_budget' }}</th>
-      <th>{{t 'project.deposited_budget' }}</th>
-      <th>{{t 'project.committed_budget' }}</th>
-      <th>{{t 'project.spent_budget' }}</th>
-      <th>{{t 'project.balance' }}</th>
-    </tr>
-  </thead>
-  <tbody>
-  {{#each}}
-   <tr>
-     <td>{{link-to key 'projects.show' this}}</td>
-     <td>{{financing_source}}</td>
-     <td>{{name}}</td>
-     <td>{{sponsor_abbrev}}</td>
-     <td>{{formatted-date start_date}}</td>
-     <td>{{formatted-date end_date}}</td>
-     <td>{{authorized_budget}}</td>
-     <td>{{deposited_budget}}</td>
-     <td>{{committed_budget}}</td>
-     <td>{{spent_budget}}</td>
-     <td>{{balance}}</td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+  <table class="table table-striped table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>{{t 'project.key' }}</th>
+        <th>{{t 'project.financing_source' }}</th>
+        <th>{{t 'project.name' }}</th>
+        <th>{{t 'project.sponsor_abbrev' }}</th>
+        <th>{{t 'project.start_date' }}</th>
+        <th>{{t 'project.end_date' }}</th>
+        <th>{{t 'project.authorized_budget' }}</th>
+        <th>{{t 'project.deposited_budget' }}</th>
+        <th>{{t 'project.committed_budget' }}</th>
+        <th>{{t 'project.spent_budget' }}</th>
+        <th>{{t 'project.balance' }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each}}
+      <tr>
+        <td>{{link-to key 'projects.show' this}}</td>
+        <td>{{financing_source}}</td>
+        <td>{{name}}</td>
+        <td>{{sponsor_abbrev}}</td>
+        <td>{{formatted-date start_date}}</td>
+        <td>{{formatted-date end_date}}</td>
+        <td>{{authorized_budget}}</td>
+        <td>{{deposited_budget}}</td>
+        <td>{{committed_budget}}</td>
+        <td>{{spent_budget}}</td>
+        <td>{{balance}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>
