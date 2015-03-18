@@ -11,6 +11,7 @@ class LineSerializer < ActiveModel::Serializer
              :project_id,
              :links,
              :key_and_name,
+             :balance,
              :has_expenditures
 
   def deposited_budget
@@ -23,6 +24,10 @@ class LineSerializer < ActiveModel::Serializer
 
   def spent_budget
     number_with_precision object.spent_budget
+  end
+
+  def balance
+    number_with_precision object.balance
   end
 
   def id

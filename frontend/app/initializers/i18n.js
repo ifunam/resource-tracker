@@ -24,6 +24,7 @@ var TRANSLATIONS = {
   'line.deposited_budget': 'Presupuesto depositado',
   'line.committed_budget': 'Presupuesto comprometido',
   'line.spent_budget': 'Presupuesto gastado',
+  'line.balance': 'Saldo',
   'line.key_and_name': 'Partida',
   'line.one': 'Información de la partida',
   'line.others': 'Partidas',

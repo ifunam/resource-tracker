@@ -6,6 +6,7 @@ export default DS.Model.extend({
   deposited_budget: DS.attr('string'),
   committed_budget: DS.attr('string'),
   spent_budget: DS.attr('string'),
+  balance: DS.attr('string'),
   key_and_name: DS.attr('string'),
 
   project: DS.belongsTo('project'),

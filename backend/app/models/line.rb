@@ -17,4 +17,8 @@ class Line
   def key_and_name
     ["(#{key})", name].join(' ')
   end
+
+  def balance
+    deposited_budget.to_f - committed_budget.to_f - spent_budget.to_f
+  end
 end
