@@ -3,8 +3,9 @@
   <table class="table table-striped table-condensed table-hover">
     <thead>
       <tr>
-        <th>{{t 'expenditure.date' }}</th>
+        <th>{{t 'expenditure.id' }}</th>
         <th>{{t 'expenditure.motive' }}</th>
+        <th>{{t 'expenditure.date' }}</th>
         <th>{{t 'expenditure.amount' }}</th>
         <th>{{t 'expenditure.status' }}</th>
       </tr>
@@ -12,8 +13,9 @@
     <tbody>
       {{#each expenditure in expenditures}}
       <tr>
-        <td>{{formatted-date expenditure.date}}</td>
+        <td>{{expenditure.id}}</td>
         <td>{{expenditure.motive}}</td>
+        <td>{{formatted-date expenditure.date}}</td>
         <td>{{expenditure.amount}}</td>
         <td>{{expenditure.status}}</td>
       </tr>

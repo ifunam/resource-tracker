@@ -29,6 +29,7 @@ var TRANSLATIONS = {
   'line.one': 'Información de la partida',
   'line.others': 'Partidas',
 
+  'expenditure.id': 'Id',
   'expenditure.date': 'Fecha',
   'expenditure.motive': 'Motivo',
   'expenditure.amount': 'Cantidad',
