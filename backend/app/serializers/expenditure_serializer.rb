@@ -7,14 +7,15 @@ class ExpenditureSerializer < ActiveModel::Serializer
              :motive,
              :amount,
              :status,
-             :line_id
+             :line_id,
+             :key
 
   def amount
     number_with_precision object.amount
   end
 
   def id
-    object.key
+    object.id.to_s
   end
 
   def line_id

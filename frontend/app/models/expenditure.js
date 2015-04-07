@@ -6,6 +6,7 @@ export default DS.Model.extend({
   motive: DS.attr('string'),
   amount: DS.attr('string'),
   status: DS.attr('string'),
+  key: DS.attr('string'),
 
   line: DS.belongsTo('line'),
 });
