@@ -17,6 +17,14 @@ Ember.Handlebars.registerBoundHelper('formatted-date', function(value) {
   return moment(value).format('YYYY-MM-DD');
 });
 
+Ember.Handlebars.registerBoundHelper('current-date', function() {
+  return moment().format('YYYY-MM-DD');
+});
+
+Ember.Handlebars.registerBoundHelper('current-year', function() {
+  return moment().format('YYYY');
+});
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;

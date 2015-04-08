@@ -3,16 +3,23 @@
     <a class="navbar-brand" href="#">Instituto de F&iacute;sica</a>
     <ul class="nav navbar-nav">
       {{#if session.isAuthenticated}}
-        <li>{{link-to 'Proyectos vigentes' 'projects'}}</li>
+        <li>{{link-to 'Proyectos y gastos' 'projects'}}</li>
       {{/if}}
     </ul>
   </div>
 </div>
 
 {{#if session.isAuthenticated}}
-  <div class="pull-right">
-    <b class="text-success">{{session.login}}</b>
-    <button class="btn btn-link" {{ action 'invalidateSession' }}>{{t 'user.actions.logout'}}</button>
+<div class="row right">
+    <div class="col-md-10 text-right"> 
+      {{ current-date }}
+    </div>
+    <div class="col-md-1 text-right">
+      <b class="text-success">{{session.login}}</b>
+    </div>
+    <div class="col-md-1">
+      <a {{ action 'invalidateSession' }}>{{t 'user.actions.logout'}}</a>
+    </div>
   </div>
 {{/if}}
 

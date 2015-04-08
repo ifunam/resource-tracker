@@ -16,8 +16,8 @@ var TRANSLATIONS = {
   'project.balance': 'Saldo',
   'project.agreement_and_name': 'Proyecto',
   'project.sponsor_full_name': 'Patrocinador',
-  'project.one': 'Información del proyecto',
-  'project.others': 'Proyectos vigentes',
+  'project.one': 'Reporte de gastos',
+  'project.others': 'Proyectos y gastos',
 
   'line.key': 'Partida',
   'line.name': 'Nombre',
@@ -26,7 +26,7 @@ var TRANSLATIONS = {
   'line.spent_budget': 'Presupuesto gastado',
   'line.balance': 'Saldo',
   'line.key_and_name': 'Partida',
-  'line.one': 'Información de la partida',
+  'line.one': 'Partida',
   'line.others': 'Partidas',
 
   'expenditure.key': 'Clave',
