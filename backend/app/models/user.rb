@@ -44,7 +44,7 @@ class User
 
   before_save :ensure_authentication_token
 
-  has_many :projects
+  has_many :projects, order: [:start_date.asc, :name.asc]
 
   def self.serialize_into_session(record)
     [record.id.to_s, record.authenticatable_salt]
@@ -53,6 +53,10 @@ class User
   def ensure_authentication_token
     return unless authentication_token.to_s.blank?
     self.authentication_token = generate_authentication_token
+  end
+
+  def valid_projects
+    self.projects.where(:end_date.gt => Date.today)
   end
 
   private

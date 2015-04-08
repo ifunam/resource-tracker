@@ -3,7 +3,7 @@ class Api::V1::ProjectsController < Api::V1::BaseController
 
   # GET /projects
   def index
-    @projects = current_api_v1_user.projects.all.page(params[:page] || 1)
+    @projects = current_api_v1_user.valid_projects.all.page(params[:page] || 1)
     render json: @projects,
       meta: {
         current_page: @projects.current_page,
