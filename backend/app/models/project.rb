@@ -27,7 +27,7 @@ class Project
   end
 
   def agreement_and_name
-    [agreement, "(#{start_date.year})", name].join(' ')
+    [key, agreement, "(#{start_date.year})", name].compact.join(' ')
   end
 
   def balance
