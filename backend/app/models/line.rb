@@ -10,7 +10,7 @@ class Line
   field :spent_budget, type: Float
 
   embedded_in :project, inverse_of: :lines
-  embeds_many :expenditures
+  embeds_many :expenditures, order: [:date.asc, :key.asc, :status.asc, :motive.asc]
 
   slug :name, :key, scope: :project
 
