@@ -1,5 +1,6 @@
 class Api::V1::BaseController < ApplicationController
   before_filter :authenticate_user_from_token!
+  before_filter :verify_migration_status!
 
   protected
 
@@ -13,4 +14,10 @@ class Api::V1::BaseController < ApplicationController
     end
   end
 
+  def verify_migration_status!
+    if DataMigration.pending.count > 0
+      payload = { :error =>  "Migration in progress..."  }
+      render json: payload, status: 423
+    end
+  end
 end
