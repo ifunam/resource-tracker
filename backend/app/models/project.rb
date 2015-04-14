@@ -22,6 +22,26 @@ class Project
 
   slug :name, :key
 
+  def self.total_authorized_budget
+    sum(:authorized_budget)
+  end
+
+  def self.total_deposited_budget
+    sum(:deposited_budget)
+  end
+
+  def self.total_committed_budget
+    sum(:committed_budget)
+  end
+
+  def self.total_spent_budget
+    sum(:spent_budget)
+  end
+
+  def self.total_balance
+    self.total_authorized_budget.to_f - self.total_committed_budget.to_f - self.total_committed_budget.to_f
+  end
+
   def sponsor_full_name
     "[#{sponsor_abbrev}] " + sponsor_name.to_s
   end
