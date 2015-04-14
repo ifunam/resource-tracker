@@ -10,7 +10,14 @@ var App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver: Resolver,
-  ApplicationSerializer: DS.ActiveModelSerializer.extend({})
+  ApplicationSerializer: DS.ActiveModelSerializer.extend({
+    extractMeta: function(store, type, payload) {
+      if (payload && payload.meta) {
+        store.setMetadataFor(type, { meta: payload.meta });
+        delete payload.meta;
+      }
+    }
+  })
 });
 
 Ember.Handlebars.registerBoundHelper('formatted-date', function(value) {

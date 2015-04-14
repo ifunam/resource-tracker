@@ -11,6 +11,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         return this.transitionTo('login');
       }
     }
+  },
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    controller.set('meta', this.store.metadataFor("project").meta);
   }
 });
 
