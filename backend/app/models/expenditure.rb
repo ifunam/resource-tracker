@@ -9,4 +9,8 @@ class Expenditure
   field :status, type: String
 
   embedded_in :line
+
+  def self.total_amount
+    sum(:amount)
+  end
 end

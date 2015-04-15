@@ -14,6 +14,22 @@ class Line
 
   slug :name, :key, scope: :project
 
+  def self.total_deposited_budget
+    sum(:deposited_budget)
+  end
+
+  def self.total_committed_budget
+    sum(:committed_budget)
+  end
+
+  def self.total_spent_budget
+    sum(:spent_budget)
+  end
+
+  def self.total_balance
+    self.total_deposited_budget.to_f - self.total_committed_budget.to_f - self.total_spent_budget.to_f
+  end
+
   def key_and_name
     ["(#{key})", name].join(' ')
   end
