@@ -1,33 +1,31 @@
 <h3>{{t 'expenditure.other'}}</h3>
-<div class="box box-with-radius">
-  <table class="table table-striped table-condensed table-hover">
-    <thead>
-      <tr>
-        <th>{{t 'expenditure.key' }}</th>
-        <th>{{t 'expenditure.motive' }}</th>
-        <th>{{t 'expenditure.date' }}</th>
-        <th>{{t 'expenditure.amount' }}</th>
-        <th>{{t 'expenditure.status' }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each expenditure in expenditures}}
-      <tr>
-        <td>{{expenditure.key}}</td>
-        <td>{{expenditure.motive}}</td>
-        <td>{{formatted-date expenditure.date}}</td>
-        <td>{{expenditure.amount}}</td>
-        <td>{{expenditure.status}}</td>
-      </tr>
-      {{/each}}
-    </tbody>
-    {{#if meta}}
-    <tfoot>
-      <tr>
-        <td colspan="3">Total</td>
-        <td colspan="2">{{meta.total.amount}}</td>
-      </tr>
-    </tfoot>
-    {{/if}}
-  </table>
-</div>
+<table class="table table-striped table-condensed table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>{{t 'expenditure.key' }}</th>
+      <th>{{t 'expenditure.motive' }}</th>
+      <th>{{t 'expenditure.date' }}</th>
+      <th>{{t 'expenditure.status' }}</th>
+      <th class="numeric">{{t 'expenditure.amount' }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each expenditure in expenditures}}
+    <tr>
+      <td>{{expenditure.key}}</td>
+      <td>{{expenditure.motive}}</td>
+      <td>{{formatted-date expenditure.date}}</td>
+      <td>{{expenditure.status}}</td>
+      <td class="numeric">{{expenditure.amount}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+  {{#if meta}}
+  <tfoot>
+    <tr>
+      <td class="bold" colspan="3">Total</td>
+      <td class="numeric" colspan="2">{{meta.total.amount}}</td>
+    </tr>
+  </tfoot>
+  {{/if}}
+</table>

@@ -1,14 +1,13 @@
 <h3>{{t 'line.others'}} </h3>
-<div class="box box-with-radius">
-  <table class="table table-striped table-condensed table-hover">
+  <table class="table table-striped table-condensed table-hover table-bordered">
     <thead>
       <tr>
         <th>{{t 'line.key' }}</th>
         <th>{{t 'line.name' }}</th>
-        <th>{{t 'line.deposited_budget' }}</th>
-        <th>{{t 'line.committed_budget' }}</th>
-        <th>{{t 'line.spent_budget' }}</th>
-        <th>{{t 'line.balance' }}</th>
+        <th class="numeric">{{t 'line.deposited_budget' }}</th>
+        <th class="numeric">{{t 'line.committed_budget' }}</th>
+        <th class="numeric">{{t 'line.spent_budget' }}</th>
+        <th class="numeric">{{t 'line.balance' }}</th>
       </tr>
     </thead>
     <tbody>
@@ -20,23 +19,22 @@
         <td>{{line.key}}</td>
         {{/if}}
         <td>{{line.name}}</td>
-        <td>{{line.deposited_budget}}</td>
-        <td>{{line.committed_budget}}</td>
-        <td>{{line.spent_budget}}</td>
-        <td>{{line.balance}}</td>
+        <td class="numeric">{{line.deposited_budget}}</td>
+        <td class="numeric">{{line.committed_budget}}</td>
+        <td class="numeric">{{line.spent_budget}}</td>
+        <td class="numeric">{{line.balance}}</td>
       </tr>
       {{/each}}
     </tbody>
     {{#if meta}}
     <tfoot>
       <tr>
-        <td colspan="2">Total</td>
-        <td>{{meta.total.deposited_budget}}</td>
-        <td>{{meta.total.committed_budget}}</td>
-        <td>{{meta.total.spent_budget}}</td>
-        <td>{{meta.total.balance}}</td>
+        <td class="bold" colspan="2">Total</td>
+        <td class="numeric">{{meta.total.deposited_budget}}</td>
+        <td class="numeric">{{meta.total.committed_budget}}</td>
+        <td class="numeric">{{meta.total.spent_budget}}</td>
+        <td class="numeric">{{meta.total.balance}}</td>
       </tr>
     </tfoot>
     {{/if}}
   </table>
-</div>
