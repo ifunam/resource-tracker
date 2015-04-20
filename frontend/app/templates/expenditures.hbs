@@ -21,11 +21,13 @@
       </tr>
       {{/each}}
     </tbody>
+    {{#if meta}}
     <tfoot>
       <tr>
         <td colspan="3">Total</td>
         <td colspan="2">{{meta.total.amount}}</td>
       </tr>
     </tfoot>
+    {{/if}}
   </table>
 </div>

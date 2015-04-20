@@ -16,6 +16,6 @@
   </table>
 </div>
 
-{{partial 'expenditures/index'}}
+{{outlet}}
 
-{{#link-to 'projects.show' model.project class='btn btn-success'}} {{t 'actions.back'}} {{/link-to}}
+{{#link-to 'lines' model.project class='btn btn-primary'}} {{t 'line.others'}} {{/link-to}}

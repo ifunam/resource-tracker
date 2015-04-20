@@ -22,8 +22,7 @@
   </table>
 </div>
 
-{{#if has_lines}}
-{{partial 'lines/index'}}
-{{/if}}
+{{outlet}}
 
-{{#link-to 'projects' class='btn btn-success' }} {{t 'actions.back'}} {{/link-to}}
+{{#link-to 'projects' class='btn btn-success' }} {{t 'project.others'}} {{/link-to}}
+
