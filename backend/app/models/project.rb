@@ -39,7 +39,7 @@ class Project
   end
 
   def self.total_balance
-    self.total_authorized_budget.to_f - self.total_committed_budget.to_f - self.total_committed_budget.to_f
+    self.total_authorized_budget.to_f - self.total_committed_budget.to_f - self.total_spent_budget.to_f
   end
 
   def sponsor_full_name
