@@ -1,17 +1,17 @@
-== README
+# README.rdoc
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version 2.2.1
+## Ruby version 2.2.1
 
   * rvm for development
   * renv for production
   * The bundler gem
 
-* System dependencies
+## System dependencies
 
   * MongoDB 3.x to be used as datastore
   * Nginx 1.6.x
@@ -21,7 +21,7 @@ Things you may want to cover:
    $ bundle install
 
 
-* Configuration
+## Configuration
 
   * Database: Copy and edit the mongoid.yml.example file to mongoid.yml file.
   * API Tokens: Copy and edit the secrets.yml.example file to secrets.yml file.
@@ -33,7 +33,7 @@ into the secrets.yml.
 The LDAP configuration file is optional, it will enable the ldap authentication
 instead the authentication against the database (used by default).
 
-* Database creation and initialization for development
+## Database creation and initialization for development
 
 You can create the database with the command:
 
@@ -46,13 +46,13 @@ $ rails s -b 127.0.0.1
 Check the db/seed.rb, it is using the ffaker and factory_girl gems to generate
 testing data.
 
-* Deployment instructions
+## Deployment instructions
 
 Configure the config/deploy/production.rb file and run the following command:
 
 $ cap production deploy
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services (job queues, cache servers, search engines, etc.)
 
 This application depends on a delayed_job to populate the database from
 the data_migrations collection. Under production you need to run the
