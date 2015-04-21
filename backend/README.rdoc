@@ -5,24 +5,58 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.2.1
+
+  * rvm for development
+  * renv for production
+  * The bundler gem
 
 * System dependencies
 
+  * MongoDB 3.x to be used as datastore
+  * Nginx 1.6.x
+
+  * Installing the ruby dependencies:
+
+  ```
+    $ bundle install
+
 * Configuration
 
-* Database creation
+  * Database: Copy and edit the mongoid.yml.example file to mongoid.yml file.
+  * API Tokens: Copy and edit the secrets.yml.example file to secrets.yml file.
+  * LDAP: Copy and edit the ldap.yml.example file to the ldap.yml file.
 
-* Database initialization
+You can generate tokens using the rake secret instruction and copy the new one
+into the secrets.yml.
 
-* How to run the test suite
+The LDAP configuration file is optional, it will enable the ldap authentication
+instead the authentication against the database (used by default).
 
-* Services (job queues, cache servers, search engines, etc.)
+* Database creation and initialization for development
+
+You can create the database with the command:
+```
+  $ rake db:mongoid:drop
+  $ rake db:seed
+  $ rails s -b 127.0.0.1
+
+Check the db/seed.rb, it is using the ffaker and factory_girl gems to generate
+testing data.
 
 * Deployment instructions
 
-* ...
+Configure the config/deploy/production.rb file and run the following command:
 
+  ```
+    $ cap production deploy
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Services (job queues, cache servers, search engines, etc.)
+
+This application depends on a delayed_job to populate the database from
+the data_migrations collection. Under production you need to run the
+script as follows:
+
+  ```
+    $ RAILS_ENV=production ./bin/delayed_job start
+
