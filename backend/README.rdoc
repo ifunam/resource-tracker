@@ -18,10 +18,8 @@ Things you may want to cover:
 
   * Installing the ruby dependencies:
 
+   $ bundle install
 
-```
-$ bundle install
-```
 
 * Configuration
 
@@ -39,13 +37,11 @@ instead the authentication against the database (used by default).
 
 You can create the database with the command:
 
-```
 $ rake db:mongoid:drop
 
 $ rake db:seed
 
 $ rails s -b 127.0.0.1
-```
 
 Check the db/seed.rb, it is using the ffaker and factory_girl gems to generate
 testing data.
@@ -54,9 +50,7 @@ testing data.
 
 Configure the config/deploy/production.rb file and run the following command:
 
-```
 $ cap production deploy
-```
 
 * Services (job queues, cache servers, search engines, etc.)
 
@@ -64,6 +58,4 @@ This application depends on a delayed_job to populate the database from
 the data_migrations collection. Under production you need to run the
 script as follows:
 
-```
 $ RAILS_ENV=production ./bin/delayed_job start
-```
