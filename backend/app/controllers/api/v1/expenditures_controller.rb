@@ -3,7 +3,7 @@ class Api::V1::ExpendituresController < Api::V1::BaseController
   before_filter :determine_scope
 
   def index
-    @expenditures = @scope.order_by([[:date, :desc], [:motive, :asc]]).all
+    @expenditures = @scope.all
     render json: @expenditures, meta: meta
   end
 
