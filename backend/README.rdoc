@@ -18,8 +18,8 @@ Things you may want to cover:
 
   * Installing the ruby dependencies:
 
-  ```
-    $ bundle install
+```
+  $ bundle install
 
 * Configuration
 
@@ -48,8 +48,8 @@ testing data.
 
 Configure the config/deploy/production.rb file and run the following command:
 
-  ```
-    $ cap production deploy
+```
+  $ cap production deploy
 
 * Services (job queues, cache servers, search engines, etc.)
 
@@ -57,6 +57,6 @@ This application depends on a delayed_job to populate the database from
 the data_migrations collection. Under production you need to run the
 script as follows:
 
-  ```
-    $ RAILS_ENV=production ./bin/delayed_job start
+```
+  $ RAILS_ENV=production ./bin/delayed_job start
 
