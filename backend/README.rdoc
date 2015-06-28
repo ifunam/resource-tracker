@@ -41,7 +41,7 @@ $ rake db:mongoid:drop
 
 $ rake db:seed
 
-$ rails s -b 127.0.0.1
+$ rails s -b 127.0.0.1 -p 9292
 
 Check the db/seed.rb, it is using the ffaker and factory_girl gems to generate
 testing data.
